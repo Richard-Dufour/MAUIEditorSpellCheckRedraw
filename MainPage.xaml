@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SpellcheckRedraw.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Type a misspelllled word. Hit space bar. Word will turn red if toggle is ON (great)."
+                FontSize="Medium"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Now turn toggle OFF, red goes away automatically (great)."
+                FontSize="Medium"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Now turn toggle back ON, it does NOT come back red."
+                FontSize="Medium"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Should turn red when toggle goes back ON... just like it does when toggle is turned OFF."
+                FontSize="Medium"
+                HorizontalOptions="Center" />
+            
+            <HorizontalStackLayout>
+                <Label Text="Spellcheck" Margin="0,10,10,0"/>
+                <Switch x:Name="autoTextCorrectionToggle" Grid.Column="1" IsToggled="true" Toggled="autoTextCorrectionToggle_Toggled" />
+            </HorizontalStackLayout>
+
+            <Editor
+                x:Name="NoteEditor"
+                Text=""
+                Placeholder="Type a mispelllled word here"
+                FontSize="Small"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                IsTextPredictionEnabled="True"                    
+                IsSpellCheckEnabled="True" />            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
